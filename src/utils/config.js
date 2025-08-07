@@ -1,3 +1,3 @@
 export const config={
-    BASE_URL :"http://propera.global"
+    BASE_URL :"https://propera.global"
 }
