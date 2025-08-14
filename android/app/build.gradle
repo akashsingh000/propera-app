@@ -117,10 +117,16 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('propera-release-key.keystore')
+            storePassword 'propera@1234'
+            keyAlias 'propera'
+            keyPassword 'propera@1234'
+        }
     }
     buildTypes {
         debug {
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
