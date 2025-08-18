@@ -4,20 +4,20 @@ import { Fonts } from "../utils/fonts";
 import { SizeConfig } from "../utils/size";
 
 export const LogoWrapper = styled.View`
-width:${SizeConfig.width * 50}px;
-height:${SizeConfig.width * 50}px;
-background-color: #FAF0E6;
-border-radius: ${SizeConfig.width * 50}px;
-padding: ${SizeConfig.width * 5}px;
-margin-top: ${SizeConfig.width * 40}px;
-`
+  width: ${SizeConfig.width * 50}px;
+  height: ${SizeConfig.width * 50}px;
+  background-color: #faf0e6;
+  border-radius: ${SizeConfig.width * 50}px;
+  padding: ${SizeConfig.width * 5}px;
+  margin-top: ${SizeConfig.width * 40}px;
+`;
 
 export const EmailBox = styled(({ touchable, ...props }) => {
   const Component = touchable ? TouchableOpacity : View;
   return <Component {...props} />;
 })`
   width: ${SizeConfig.width * 90}px;
-  background-color: #FAF0E6CC;
+  background-color: #faf0e6cc;
   font-size: 20px;
   line-height: 1.4px;
   border-radius: 8px;
@@ -83,8 +83,8 @@ export const ErrorText = styled(Text)`
 `;
 
 export const SubmitButton = styled(TouchableOpacity)`
- height: 40px;
-  background: ${props => props.isPressed ? '#231F20' : 'transparent'};
+  height: 40px;
+  background: ${(props) => (props.isPressed ? "#231F20" : "transparent")};
   border: 1px solid #000000;
   border-radius: 4px;
   justify-content: center;
@@ -93,7 +93,6 @@ export const SubmitButton = styled(TouchableOpacity)`
   margin-bottom: 8px;
   width: 100%;
 `;
-
 
 export const SuccessContainer = styled(View)`
   align-items: center;
@@ -109,7 +108,7 @@ export const SuccessText = styled(Text)`
 `;
 
 export const ResetButton = styled(TouchableOpacity)`
-  background-color: #231F20;
+  background-color: #231f20;
   padding: 12px 24px;
   border-radius: 8px;
 `;
@@ -120,11 +119,10 @@ export const ResetButtonText = styled(Text)`
   font-size: 10px;
 `;
 
-
 export const ButtonContainer = styled(TouchableOpacity)`
   width: 100%;
   height: 48px;
-  background: ${props => props.isPressed ? '#231F20' : 'transparent'};
+  background: ${(props) => (props.isPressed ? "#231F20" : "transparent")};
   border: 2px solid #000000;
   border-radius: 4px;
   justify-content: center;
@@ -140,9 +138,16 @@ export const ButtonContent = styled(View)`
 `;
 
 export const ButtonText = styled(Text)`
-  font-family: 'Inter-SemiBold'; /* Make sure to load this font */
+  font-family: "Inter-SemiBold"; /* Make sure to load this font */
   font-size: 13px;
-  color: ${props => props.isPressed ? '#FFFFFF' : '#231F20'};
+  color: ${(props) => (props.isPressed ? "#FFFFFF" : "#231F20")};
   font-family: ${Fonts.semiBold};
   margin-right: 8px;
+`;
+
+export const ErrorBox = styled.View`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 `;

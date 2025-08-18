@@ -63,7 +63,7 @@ const EmailForm = ({ onClose }) => {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
-        timeout:10000
+        timeout: 10000
       });
       if (response.data.trim() === 'success') {
         dispatch({ type: 'SUBMIT_SUCCESS' });
@@ -73,9 +73,9 @@ const EmailForm = ({ onClose }) => {
         dispatch({ type: "SET_SUBMIT", payload: false });
       }
     } catch (err) {
-      console.log({err});
+      console.log({ err });
       dispatch({ type: 'SET_ERROR', payload: 'Submission failed. Please try again.' });
-      showToast.error('There was a problem with the server. Please try again later.');
+      showToast.error('Submission failed. Please try again.');
     }
   };
 
@@ -102,10 +102,10 @@ const EmailForm = ({ onClose }) => {
 
   if (isSubmitted) {
     return (
-      <Animated.View style={{opacity:fadeAnim}} >
+      <Animated.View style={{ opacity: fadeAnim }} >
         <SuccessContainer>
           <SuccessText>You’re on the list! Get ready for something extraordinary.{"\n"}Your exclusive invite will arrive as soon as
-          the doors open.</SuccessText>
+            the doors open.</SuccessText>
         </SuccessContainer>
       </Animated.View>
     );

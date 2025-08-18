@@ -11,13 +11,19 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
 
   const loadFonts = async () => {
-    await Font.loadAsync({
-      'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
-      'Montserrat-SemiBold': require('../assets/fonts/Montserrat-SemiBold.ttf'),
-      'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
-    });
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    await SplashScreen.hideAsync();
+    try {
+      await Font.loadAsync({
+        'Montserrat-Regular': require('../assets/fonts/Montserrat-Regular.ttf'),
+        'Montserrat-SemiBold': require('../assets/fonts/Montserrat-SemiBold.ttf'),
+        'Montserrat-Bold': require('../assets/fonts/Montserrat-Bold.ttf'),
+      });
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    } catch (e) {
+      // Optionally log error
+      console.error('Font loading failed:', e);
+    } finally {
+      await SplashScreen.hideAsync();
+    }
   };
 
   useEffect(() => {
@@ -26,9 +32,9 @@ export default function RootLayout() {
 
   return (
     <ToastProvider>
-    <View style={{ flex: 1 }}>
-      <HomeScreen />
-    </View>
+      <View style={{ flex: 1 }}>
+        <HomeScreen />
+      </View>
     </ToastProvider>
   );
 }
